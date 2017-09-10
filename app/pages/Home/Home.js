@@ -1,6 +1,6 @@
 import React from 'react';
-import { StyleSheet, Text, View, Button } from 'react-native';
-import Svg, { Symbol, Path } from 'react-native-svg';
+import { StyleSheet, Text, View, TouchableHighlight } from 'react-native';
+import Svg, { Path } from 'react-native-svg';
 import { Link } from 'react-router-native';
 
 export default class Home extends React.Component {
@@ -9,23 +9,21 @@ export default class Home extends React.Component {
             <View style={styles.container}>
                 <Text style={styles.title}>Scatt Basic</Text>
                 <View style={styles.buttons}>
-                    <View style={styles.button}>
-                        <Link to="/create/target">
-                            <View style={styles.icon}>
-                                <View>
-                                    <Svg width="70" height="70" viewBox="0 0 60 60">
-                                        <Path d="M59,29h-2.025C56.458,14.907,45.093,3.542,31,3.025V1c0-0.553-0.447-1-1-1s-1,0.447-1,1v2.025   C14.907,3.542,3.542,14.907,3.025,29H1c-0.553,0-1,0.447-1,1s0.447,1,1,1h2.025C3.542,45.093,14.907,56.458,29,56.975V59   c0,0.553,0.447,1,1,1s1-0.447,1-1v-2.025C45.093,56.458,56.458,45.093,56.975,31H59c0.553,0,1-0.447,1-1S59.553,29,59,29z    M31,54.975V53c0-0.553-0.447-1-1-1s-1,0.447-1,1v1.975C16.01,54.46,5.54,43.99,5.025,31H7c0.553,0,1-0.447,1-1s-0.447-1-1-1H5.025   C5.54,16.01,16.01,5.54,29,5.025V7c0,0.553,0.447,1,1,1s1-0.447,1-1V5.025C43.99,5.54,54.46,16.01,54.975,29H53   c-0.553,0-1,0.447-1,1s0.447,1,1,1h1.975C54.46,43.99,43.99,54.46,31,54.975z"/>
-                                        <Path d="M42,29h-5.08c-0.441-3.059-2.861-5.479-5.92-5.92V18c0-0.553-0.447-1-1-1s-1,0.447-1,1v5.08   c-3.059,0.441-5.479,2.862-5.92,5.92H18c-0.553,0-1,0.447-1,1s0.447,1,1,1h5.08c0.441,3.059,2.861,5.479,5.92,5.92V42   c0,0.553,0.447,1,1,1s1-0.447,1-1v-5.08c3.059-0.441,5.479-2.862,5.92-5.92H42c0.553,0,1-0.447,1-1S42.553,29,42,29z M30,35   c-2.757,0-5-2.243-5-5s2.243-5,5-5s5,2.243,5,5S32.757,35,30,35z" />
-                                    </Svg>
-                                </View>
-                                <View>
-                                    <Text style={styles.iconText}>Новая тренировка</Text>
-                                </View>
+                    <Link to="/create/target" style={styles.button}>
+                        <View style={styles.icon}>
+                            <View>
+                                <Svg width="70" height="70" viewBox="0 0 60 60">
+                                    <Path d="M59,29h-2.025C56.458,14.907,45.093,3.542,31,3.025V1c0-0.553-0.447-1-1-1s-1,0.447-1,1v2.025   C14.907,3.542,3.542,14.907,3.025,29H1c-0.553,0-1,0.447-1,1s0.447,1,1,1h2.025C3.542,45.093,14.907,56.458,29,56.975V59   c0,0.553,0.447,1,1,1s1-0.447,1-1v-2.025C45.093,56.458,56.458,45.093,56.975,31H59c0.553,0,1-0.447,1-1S59.553,29,59,29z    M31,54.975V53c0-0.553-0.447-1-1-1s-1,0.447-1,1v1.975C16.01,54.46,5.54,43.99,5.025,31H7c0.553,0,1-0.447,1-1s-0.447-1-1-1H5.025   C5.54,16.01,16.01,5.54,29,5.025V7c0,0.553,0.447,1,1,1s1-0.447,1-1V5.025C43.99,5.54,54.46,16.01,54.975,29H53   c-0.553,0-1,0.447-1,1s0.447,1,1,1h1.975C54.46,43.99,43.99,54.46,31,54.975z"/>
+                                    <Path d="M42,29h-5.08c-0.441-3.059-2.861-5.479-5.92-5.92V18c0-0.553-0.447-1-1-1s-1,0.447-1,1v5.08   c-3.059,0.441-5.479,2.862-5.92,5.92H18c-0.553,0-1,0.447-1,1s0.447,1,1,1h5.08c0.441,3.059,2.861,5.479,5.92,5.92V42   c0,0.553,0.447,1,1,1s1-0.447,1-1v-5.08c3.059-0.441,5.479-2.862,5.92-5.92H42c0.553,0,1-0.447,1-1S42.553,29,42,29z M30,35   c-2.757,0-5-2.243-5-5s2.243-5,5-5s5,2.243,5,5S32.757,35,30,35z" />
+                                </Svg>
                             </View>
-                        </Link>
-                    </View>
-                    <View style={styles.button}>
-                        <Link>
+                            <View>
+                                <Text style={styles.iconText}>Новая тренировка</Text>
+                            </View>
+                        </View>
+                    </Link>
+                    <Link style={styles.button}>
+                        <TouchableHighlight activeOpacity={1}>
                             <View style={styles.icon}>
                                 <View>
                                     <Svg width="70" height="70" viewBox="0 0 494.907 494.907">
@@ -42,8 +40,8 @@ export default class Home extends React.Component {
                                     <Text style={styles.iconText}>Открыть сохраненную</Text>
                                 </View>
                             </View>
-                        </Link>
-                    </View>
+                        </TouchableHighlight>
+                    </Link>
                 </View>
             </View>
         );
@@ -56,14 +54,16 @@ const styles = StyleSheet.create({
         height: '100%'
     },
     buttons: {
+        flex: 1,
         alignItems: 'center',
         justifyContent: 'center',
-        flexGrow: 1
+        flexDirection: 'row',
+        flexWrap: 'wrap'
     },
     button: {
-        marginTop: 20,
+        flexGrow: 1,
+        margin: 20,
         padding: 20,
-        width: 220,
         borderColor: '#ffd3ae',
         borderWidth: 1,
         borderRadius: 3,

@@ -32,6 +32,11 @@ export default styles = StyleSheet.create({
         borderWidth: 1,
         borderRadius: 3,
     },
+    itemText: {
+        padding: 20,
+        textAlign: 'center',
+        fontSize: 16
+    },
     back: {
         position: 'absolute',
         bottom: 0,

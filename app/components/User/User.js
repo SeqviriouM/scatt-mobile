@@ -7,8 +7,12 @@ export default class User extends React.Component {
     render() {
         return (
             <View style={styles.container}>
-                <Text style={styles.title}>Выберите стрелка</Text>
-                <Link to=""><Text>Назад</Text></Link>
+                <View style={styles.content}>
+                    <Text style={styles.title}>Выберите стрелка</Text>
+                </View>
+                <Link to="/create/target" style={styles.back}>
+                    <Text style={styles.backText}>Назад</Text>
+                </Link>
             </View>
         );
     }

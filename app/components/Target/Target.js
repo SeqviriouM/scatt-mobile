@@ -4,14 +4,30 @@ import { Link } from 'react-router-native';
 import styles from './Target.style';
 
 const itemsCount = 10;
+const targets = [
+    '10м Мишень для пневматического пистолета',
+    '10м Мишень для пневматической винтовки',
+    '25/50 Мишень для малокалиберного пистолета',
+    '50м Мишень для малокалиберной винтовки',
+    '25м Грудная мишень № 4',
+    '50ft NRA/USA-50 Rifle Target',
+    '50ft NRA Official Smallbore Rifle Target 4 Position (NRA A-17)',
+    '58yds NRA Official Smallbore Rifle Target Prone (NRA A-27)',
+    '50yds NRA Official Smallbore Rifle Target (NRA A-23/5)',
+    '50ft NRA Official Pistol Target Slow Fire (NRA b-2)',
+    '50yds NRA B-6 Pistol 22 cal',
+    '25yds Official Pistol Target Slow Fire (NRA B-16)',
+];
 
 export default class Target extends React.Component {
     renderItems() {
         const items = Array.from(new Array(itemsCount), () => 0);
 
-        return items.map((item, index) => (
+        return targets.map((item, index) => (
             <View key={`target-${index}`} style={styles.item}>
-                <Text style={{textAlign: 'center'}}>Мишень</Text>
+                <Link to="/create/user">
+                    <Text style={styles.itemText}>{item}</Text>
+                </Link>
             </View>
         ));
     }
@@ -23,11 +39,9 @@ export default class Target extends React.Component {
                 <ScrollView contentContainerStyle={styles.items} scrollEnabled={true}>
                     {this.renderItems()}
                 </ScrollView>
-                <View>
-                    <Link to="/" style={styles.back}>
-                        <Text style={styles.backText}>Назад</Text>
-                    </Link>
-                </View>
+                <Link to="/" style={styles.back}>
+                    <Text style={styles.backText}>Назад</Text>
+                </Link>
             </View>
         );
     }
