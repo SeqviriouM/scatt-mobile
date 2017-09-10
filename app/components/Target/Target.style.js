@@ -12,9 +12,12 @@ export default styles = StyleSheet.create({
         // margin: 20,
     },
     title: {
-        marginLeft: 20,
-        marginBottom: 20,
-        fontSize: 16
+        marginTop: 10,
+        paddingLeft: 20,
+        paddingBottom: 20,
+        fontSize: 18,
+        borderBottomWidth: 2,
+        borderBottomColor: '#3e2723'
     },
     items: {
         flexDirection: 'row',

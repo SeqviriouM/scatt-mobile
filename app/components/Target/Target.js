@@ -3,7 +3,6 @@ import { Text, View, ScrollView } from 'react-native';
 import { Link } from 'react-router-native';
 import styles from './Target.style';
 
-const itemsCount = 10;
 const targets = [
     '10м Мишень для пневматического пистолета',
     '10м Мишень для пневматической винтовки',
@@ -21,8 +20,6 @@ const targets = [
 
 export default class Target extends React.Component {
     renderItems() {
-        const items = Array.from(new Array(itemsCount), () => 0);
-
         return targets.map((item, index) => (
             <View key={`target-${index}`} style={styles.item}>
                 <Link to="/create/user">
@@ -36,7 +33,7 @@ export default class Target extends React.Component {
         return (
             <View style={styles.container}>
                 <Text style={styles.title}>Выберите мишень</Text>
-                <ScrollView contentContainerStyle={styles.items} scrollEnabled={true}>
+                <ScrollView contentContainerStyle={styles.items}>
                     {this.renderItems()}
                 </ScrollView>
                 <Link to="/" style={styles.back}>
