@@ -9,7 +9,6 @@ export default styles = StyleSheet.create({
     content: {
         flex: 1,
         paddingBottom: 50
-        // margin: 20,
     },
     title: {
         marginTop: 10,
