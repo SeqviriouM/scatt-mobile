@@ -3,6 +3,7 @@ import {StyleSheet, Text, View} from 'react-native';
 import {NativeRouter, Route} from 'react-router-native'
 import Home from './app/pages/Home/Home';
 import Create from './app/pages/Create/Create';
+import Adjustment from './app/pages/Adjustment/Adjustment';
 
 export default class App extends React.Component {
     render() {
@@ -12,6 +13,7 @@ export default class App extends React.Component {
                     <View style={styles.content}>
                         <Route exact path="/" component={Home}/>
                         <Route path="/create" component={Create}/>
+                        <Route path="/adjustment" component={Adjustment}/>
                     </View>
                 </View>
             </NativeRouter>
