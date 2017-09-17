@@ -4,7 +4,7 @@ export default styles = StyleSheet.create({
     container: {
         flex: 1,
         position: 'relative',
-        marginTop: 20
+        marginTop: 10
     },
     content: {
         flex: 1,
@@ -16,7 +16,7 @@ export default styles = StyleSheet.create({
         paddingBottom: 20,
         fontSize: 18,
         borderBottomWidth: 2,
-        borderBottomColor: '#3e2723'
+        borderBottomColor: '#795548'
     },
     users: {
         paddingBottom: 50
@@ -73,7 +73,10 @@ export default styles = StyleSheet.create({
         bottom: 0,
         width: '100%',
         height: 50,
-        backgroundColor: '#795548'
+        backgroundColor: '#795548',
+    },
+    backButton: {
+        height: 50,
     },
     backText: {
         textAlign: 'center',

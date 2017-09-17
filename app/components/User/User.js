@@ -1,18 +1,16 @@
 import React from 'react';
-import { Text, View, Button, ScrollView, TouchableOpacity, TextInput } from 'react-native';
+import { Text, View, Button, ScrollView, TextInput } from 'react-native';
 import { Link } from 'react-router-native';
 import Svg, { Path, Polygon } from 'react-native-svg';
+
+import Touchable from '../../components/Touchable/Touchable';
+
 import styles from './User.style';
 
 const users = [
     'Анатолий Юрьевич',
     'Елена Васильева',
-    'Анатолий Юрьевич',
-    'Елена Васильева',
-    'Анатолий Юрьевич',
-    'Елена Васильева',
-    'Анатолий Юрьевич',
-    'Елена Васильева'
+    'Генадий Анатольевич'
 ];
 
 export default class User extends React.Component {
@@ -49,7 +47,7 @@ export default class User extends React.Component {
         
         return users.map((item, index) => (
             <View key={`user-${index}`} style={styles.user}>
-                <Link to="">
+                <Link component={Touchable} to="/adjustment">
                     <View style={{flexDirection: 'row', paddingLeft: 20, alignItems: 'center'}}>
                         <View style={styles.userIcon}>
                             <Svg width="30" height="30" viewBox="0 0 55 55" >
@@ -81,14 +79,14 @@ export default class User extends React.Component {
                         <TextInput style={styles.sectionControl} placehodler="Телефон"/>
                     </View>
                     <View style={styles.section}>
-                        <TouchableOpacity style={styles.saveUserSection} onPress={this.onPressSaveUser}>
+                        <Touchable style={styles.saveUserSection} onPress={this.onPressSaveUser}>
                             <Text style={styles.saveUserText}>Сохранить</Text>
-                        </TouchableOpacity>
+                        </Touchable>
                     </View>
                 </View>
-                <TouchableOpacity style={styles.back} onPress={this.onPressClose}>
+                <Touchable style={styles.back} onPress={this.onPressClose} activeOpacity={0.7}>
                     <Text style={styles.backText}>Закрыть</Text>
-                </TouchableOpacity>
+                </Touchable>
             </View>
         )
     }
@@ -102,12 +100,12 @@ export default class User extends React.Component {
                         {this.renderUsers()}
                     </ScrollView>
                 </View>
-                <TouchableOpacity style={styles.add} onPress={this.onPressAddUser}>
+                <Touchable style={styles.add} onPress={this.onPressAddUser}>
                     <Svg style={styles.addIcon} width="30" height="30" viewBox="0 0 485 485">
                         <Polygon points="485,227.5 257.5,227.5 257.5,0 227.5,0 227.5,227.5 0,227.5 0,257.5 227.5,257.5 227.5,485 257.5,485 257.5,257.5   485,257.5 " fill="#fff"/>
                     </Svg>
-                </TouchableOpacity>
-                <Link to="/create/target" style={styles.back}>
+                </Touchable>
+                <Link component={Touchable} to="/create/target" style={styles.back}>
                     <Text style={styles.backText}>Назад</Text>
                 </Link>
             </View>

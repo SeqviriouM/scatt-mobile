@@ -4,7 +4,7 @@ export default styles = StyleSheet.create({
     container: {
         flex: 1,
         position: 'relative',
-        marginTop: 20
+        marginTop: 10
     },
     content: {
         flex: 1,
@@ -16,7 +16,7 @@ export default styles = StyleSheet.create({
         paddingBottom: 20,
         fontSize: 18,
         borderBottomWidth: 2,
-        borderBottomColor: '#3e2723'
+        borderBottomColor: '#795548'
     },
     items: {
         flexDirection: 'row',
@@ -33,6 +33,10 @@ export default styles = StyleSheet.create({
         borderColor: '#ffd3ae',
         borderWidth: 1,
         borderRadius: 3,
+    },
+    itemLink: {
+        height: '100%',
+        justifyContent: 'center',
     },
     itemText: {
         padding: 20,

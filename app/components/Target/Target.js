@@ -1,6 +1,9 @@
 import React from 'react';
 import { Text, View, ScrollView } from 'react-native';
 import { Link } from 'react-router-native';
+
+import Touchable from '../../components/Touchable/Touchable';
+
 import styles from './Target.style';
 
 const targets = [
@@ -22,7 +25,7 @@ export default class Target extends React.Component {
     renderItems() {
         return targets.map((item, index) => (
             <View key={`target-${index}`} style={styles.item}>
-                <Link to="/create/user">
+                <Link component={Touchable} to="/create/user" style={styles.itemLink}>
                     <Text style={styles.itemText}>{item}</Text>
                 </Link>
             </View>
@@ -36,7 +39,7 @@ export default class Target extends React.Component {
                 <ScrollView contentContainerStyle={styles.items}>
                     {this.renderItems()}
                 </ScrollView>
-                <Link to="/" style={styles.back}>
+                <Link component={Touchable} to="/" style={styles.back}>
                     <Text style={styles.backText}>Назад</Text>
                 </Link>
             </View>
