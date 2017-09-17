@@ -16,32 +16,35 @@ export default styles = StyleSheet.create({
         paddingBottom: 20,
         fontSize: 18,
         borderBottomWidth: 2,
-        borderBottomColor: '#795548'
+        borderBottomColor: '#263238'
     },
-    items: {
-        flexDirection: 'row',
-        flexWrap: 'wrap',
-        paddingBottom: 50
-    },
-    item: {
-        flexGrow: 1,
-        width: '40%',
-        height: 150,
+    target: {
+        height: 200,
+        maxWidth: 400,
         margin: 20,
         justifyContent: 'center',
-        backgroundColor: '#fbecdf',
-        borderColor: '#ffd3ae',
-        borderWidth: 1,
+        alignItems: 'center',
         borderRadius: 3,
+        backgroundColor: '#263238'
     },
-    itemLink: {
-        height: '100%',
-        justifyContent: 'center',
+    targetText: {
+        color: '#fff',
+        fontSize: 36
     },
-    itemText: {
-        padding: 20,
-        textAlign: 'center',
-        fontSize: 16
+    settings: {
+        backgroundColor: '#263238'
+    },
+    settingsIcon: {
+        position: 'absolute',
+        top: 7,
+        right: 10
+    },
+    checkbox: {
+        backgroundColor: 'transparent',
+        borderColor: 'transparent',
+    },
+    checkboxText: {
+        color: '#fff'
     },
     back: {
         position: 'absolute',

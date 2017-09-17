@@ -16,7 +16,7 @@ export default styles = StyleSheet.create({
         paddingBottom: 20,
         fontSize: 18,
         borderBottomWidth: 2,
-        borderBottomColor: '#795548'
+        borderBottomColor: '#263238'
     },
     users: {
         paddingBottom: 50

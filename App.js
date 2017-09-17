@@ -3,7 +3,7 @@ import {StyleSheet, Text, View} from 'react-native';
 import {NativeRouter, Route} from 'react-router-native'
 import Home from './app/pages/Home/Home';
 import Create from './app/pages/Create/Create';
-import Adjustment from './app/pages/Adjustment/Adjustment';
+import Calibration from './app/pages/Calibration/Calibration';
 
 export default class App extends React.Component {
     render() {
@@ -13,7 +13,7 @@ export default class App extends React.Component {
                     <View style={styles.content}>
                         <Route exact path="/" component={Home}/>
                         <Route path="/create" component={Create}/>
-                        <Route path="/adjustment" component={Adjustment}/>
+                        <Route path="/calibration" component={Calibration}/>
                     </View>
                 </View>
             </NativeRouter>
@@ -26,7 +26,7 @@ const styles = StyleSheet.create({
         flex: 1,
         height: '100%',
         paddingTop: 30,
-        backgroundColor: '#555',
+        backgroundColor: '#333',
     },
     content: {
         flex: 1,

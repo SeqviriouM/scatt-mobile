@@ -16,7 +16,7 @@ export default styles = StyleSheet.create({
         paddingBottom: 20,
         fontSize: 18,
         borderBottomWidth: 2,
-        borderBottomColor: '#795548'
+        borderBottomColor: '#263238'
     },
     items: {
         flexDirection: 'row',
@@ -36,7 +36,7 @@ export default styles = StyleSheet.create({
     },
     itemLink: {
         height: '100%',
-        justifyContent: 'center',
+        justifyContent: 'center'
     },
     itemText: {
         padding: 20,

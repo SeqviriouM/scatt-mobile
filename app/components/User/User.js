@@ -47,7 +47,7 @@ export default class User extends React.Component {
         
         return users.map((item, index) => (
             <View key={`user-${index}`} style={styles.user}>
-                <Link component={Touchable} to="/adjustment">
+                <Link component={Touchable} to="/calibration/video">
                     <View style={{flexDirection: 'row', paddingLeft: 20, alignItems: 'center'}}>
                         <View style={styles.userIcon}>
                             <Svg width="30" height="30" viewBox="0 0 55 55" >

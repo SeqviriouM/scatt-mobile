@@ -1,13 +1,13 @@
 import React from 'react';
 import { StyleSheet, View } from 'react-native';
 import { Route } from 'react-router-native';
-import VideoSeeker from '../../components/VideoSeeker/VideoSeeker';
+import VideoFinder from '../../components/VideoFinder/VideoFinder';
 
-export default class Adjustment extends React.Component {
+export default class Calibration extends React.Component {
     render() {
         return (
             <View style={styles.container}>
-                <Route exact path="/adjustment" component={VideoSeeker}/>
+                <Route exact path="/calibration/video" component={VideoFinder}/>
             </View>
         );
     }
