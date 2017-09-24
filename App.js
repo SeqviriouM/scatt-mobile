@@ -1,9 +1,11 @@
 import React from 'react';
 import {StyleSheet, Text, View} from 'react-native';
 import {NativeRouter, Route} from 'react-router-native'
-import Home from './app/pages/Home/Home';
-import Create from './app/pages/Create/Create';
-import Calibration from './app/pages/Calibration/Calibration';
+
+import Home from './app/pages/Home';
+import Create from './app/pages/Create';
+import Calibration from './app/pages/Calibration';
+import Dashboard from './app/pages/Dashboard';
 
 export default class App extends React.Component {
     render() {
@@ -14,6 +16,7 @@ export default class App extends React.Component {
                         <Route exact path="/" component={Home}/>
                         <Route path="/create" component={Create}/>
                         <Route path="/calibration" component={Calibration}/>
+                        <Route path="/dashboard" component={Dashboard}/>
                     </View>
                 </View>
             </NativeRouter>

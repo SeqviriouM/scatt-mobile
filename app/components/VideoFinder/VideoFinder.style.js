@@ -8,14 +8,17 @@ export default styles = StyleSheet.create({
     },
     content: {
         flex: 1,
-        paddingBottom: 50
+        paddingBottom: 25
+    },
+    scroll: {
+        flex: 1
     },
     title: {
         marginTop: 10,
         paddingLeft: 20,
         paddingBottom: 20,
         fontSize: 18,
-        borderBottomWidth: 2,
+        borderBottomWidth: 1,
         borderBottomColor: '#263238'
     },
     target: {
@@ -32,7 +35,8 @@ export default styles = StyleSheet.create({
         fontSize: 36
     },
     settings: {
-        backgroundColor: '#263238'
+        borderBottomWidth: 1,
+        borderBottomColor: '#263238'
     },
     settingsIcon: {
         position: 'absolute',
@@ -44,7 +48,16 @@ export default styles = StyleSheet.create({
         borderColor: 'transparent',
     },
     checkboxText: {
-        color: '#fff'
+        color: '#333'
+    },
+    slider: {
+        padding: 20
+    },
+    sliderText: {
+        textAlign: 'center',
+        fontSize: 15,
+        fontWeight: "500",
+        color: '#333'
     },
     back: {
         position: 'absolute',

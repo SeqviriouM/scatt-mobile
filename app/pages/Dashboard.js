@@ -1,13 +1,15 @@
 import React from 'react';
 import { StyleSheet, View } from 'react-native';
 import { Route } from 'react-router-native';
-import VideoFinder from '../../components/VideoFinder/VideoFinder';
+import Shoot from '../components/Shoot/Shoot';
+import Graph from '../components/Graph/Graph';
 
-export default class Calibration extends React.Component {
+export default class Dashboard extends React.Component {
     render() {
         return (
             <View style={styles.container}>
-                <Route exact path="/calibration/video" component={VideoFinder}/>
+                <Route exact path="/dashboard/shoot" component={Shoot}/>
+                <Route exact path="/dashboard/graph" component={Graph}/>
             </View>
         );
     }

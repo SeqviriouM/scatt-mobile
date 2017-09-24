@@ -3,7 +3,7 @@ import { StyleSheet, Text, View, TouchableHighlight } from 'react-native';
 import Svg, { Path } from 'react-native-svg';
 import { Link } from 'react-router-native';
 
-import Touchable from '../../components/Touchable/Touchable';
+import Touchable from '../components/Touchable/Touchable';
 
 export default class Home extends React.Component {
     render() {

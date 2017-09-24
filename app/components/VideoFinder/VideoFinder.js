@@ -1,18 +1,17 @@
 import React from 'react';
 import { Text, View, ScrollView, LayoutAnimation, Platform, UIManager } from 'react-native';
 import { Link } from 'react-router-native';
-import { CheckBox } from 'react-native-elements'
+import { CheckBox, Slider } from 'react-native-elements'
 import Svg, { Path } from 'react-native-svg';
 
 import Touchable from '../../components/Touchable/Touchable';
 
 import styles from './VideoFinder.style';
 
-const CustomLayoutSpring = {
-    duration: 400,
+const customAnimation = {
+    duration: 350,
     update: {
-        type: LayoutAnimation.Types.spring,
-        springDamping: 25,
+        type: LayoutAnimation.Types.easeInEaseOut,
     },
 };
 
@@ -26,7 +25,8 @@ export default class Target extends React.Component {
             indoorMode: true,
             limitedIlluminationMode: false,
             hypersensitiveMode: false,
-            closedMode: false
+            closedMode: false,
+            sensitivity: 0.3
         };
 
         // Enable LayoutAnimation under Android
@@ -36,8 +36,8 @@ export default class Target extends React.Component {
     }
 
     onPressSettings = () => {
-        // LayoutAnimation.configureNext(CustomLayoutSpring);
-        LayoutAnimation.configureNext(LayoutAnimation.Presets.easeInEaseOut);
+        LayoutAnimation.configureNext(customAnimation);
+        // LayoutAnimation.configureNext(LayoutAnimation.Presets.easeInEaseOut);
 
         this.setState(prevState =>  {
             return {
@@ -55,6 +55,16 @@ export default class Target extends React.Component {
         this.setState(newState);
     };
 
+    onChangeSlider = (value) => {
+        this.setState({
+            sensitivity: Number(value.toFixed(2))
+        });
+    };
+
+    goShooting = () => {
+    
+    };
+
     renderContent() {
         return (
             <View style={styles.content}>
@@ -66,11 +76,13 @@ export default class Target extends React.Component {
     
     renderTarget() {
         return (
-            <View style={styles.target}>
-                <Text style={styles.targetText}>
-                    Мишень
-                </Text>
-            </View>
+            <ScrollView>
+                <Link component={Touchable} to="/dashboard/graph"  style={styles.target}>
+                    <Text style={styles.targetText}>
+                        Мишень
+                    </Text>
+                </Link>
+            </ScrollView>
         )
     }
 
@@ -85,42 +97,53 @@ export default class Target extends React.Component {
         } = this.state;
 
         return (
-            <View style={[styles.settings, {height: settingsOpened ? 'auto' : 0}]}>
-                <CheckBox
-                    containerStyle={styles.checkbox}
-                    textStyle={styles.checkboxText}
-                    title='Режим видеоискателя'
-                    checked={videoFinderMode}
-                    onPress={this.onPressCheckbox.bind(this, 'videoFinderMode')}
-                />
-                <CheckBox
-                    containerStyle={styles.checkbox}
-                    textStyle={styles.checkboxText}
-                    title='Режим в помещении'
-                    checked={indoorMode}
-                    onPress={this.onPressCheckbox.bind(this, 'indoorMode')}
-                />
-                <CheckBox
-                    containerStyle={styles.checkbox}
-                    textStyle={styles.checkboxText}
-                    title='Режим ограниченной освещенности'
-                    checked={limitedIlluminationMode}
-                    onPress={this.onPressCheckbox.bind(this, 'limitedIlluminationMode')}
-                />
-                <CheckBox
-                    containerStyle={styles.checkbox}
-                    textStyle={styles.checkboxText}
-                    title='Сверхчувствительный режим'
-                    checked={hypersensitiveMode}
-                    onPress={this.onPressCheckbox.bind(this, 'hypersensitiveMode')}
-                />
-                <CheckBox
-                    containerStyle={styles.checkbox}
-                    textStyle={styles.checkboxText}
-                    title='Игнорировать выстрелы с соседних щитов'
-                    checked={closedMode}
-                    onPress={this.onPressCheckbox.bind(this, 'closedMode')}
-                />
+            <View style={{height: settingsOpened ? 'auto' : 0}}>
+                <View style={styles.settings}>
+                    <ScrollView>
+                        <CheckBox
+                            containerStyle={styles.checkbox}
+                            textStyle={styles.checkboxText}
+                            title='Режим видеоискателя'
+                            checked={videoFinderMode}
+                            onPress={this.onPressCheckbox.bind(this, 'videoFinderMode')}
+                        />
+                        <CheckBox
+                            containerStyle={styles.checkbox}
+                            textStyle={styles.checkboxText}
+                            title='Режим в помещении'
+                            checked={indoorMode}
+                            onPress={this.onPressCheckbox.bind(this, 'indoorMode')}
+                        />
+                        <CheckBox
+                            containerStyle={styles.checkbox}
+                            textStyle={styles.checkboxText}
+                            title='Режим ограниченной освещенности'
+                            checked={limitedIlluminationMode}
+                            onPress={this.onPressCheckbox.bind(this, 'limitedIlluminationMode')}
+                        />
+                        <CheckBox
+                            containerStyle={styles.checkbox}
+                            textStyle={styles.checkboxText}
+                            title='Сверхчувствительный режим'
+                            checked={hypersensitiveMode}
+                            onPress={this.onPressCheckbox.bind(this, 'hypersensitiveMode')}
+                        />
+                        <CheckBox
+                            containerStyle={styles.checkbox}
+                            textStyle={styles.checkboxText}
+                            title='Игнорировать выстрелы с соседних щитов'
+                            checked={closedMode}
+                            onPress={this.onPressCheckbox.bind(this, 'closedMode')}
+                        />
+                        <View style={styles.slider}>
+                            <Slider
+                                value={this.state.sensitivity}
+                                step={0.1}
+                                onValueChange={this.onChangeSlider} />
+                            <Text style={styles.sliderText}>Чувствительность: {this.state.sensitivity}</Text>
+                        </View>
+                    </ScrollView>
+                </View>
             </View>
         )
     }
